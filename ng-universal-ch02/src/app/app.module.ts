@@ -8,6 +8,10 @@ import { HomeComponent } from './home/home.component';
 import { MasterComponent } from './master/master.component';
 import { DetailsComponent } from './details/details.component';
 
+import { SeoService } from './seo.service';
+import { SeoGuard } from './seo.guard';
+import { SeoDetailsGuard } from './seo-details.guard';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +26,7 @@ import { DetailsComponent } from './details/details.component';
     }),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [SeoService, SeoGuard, SeoDetailsGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
