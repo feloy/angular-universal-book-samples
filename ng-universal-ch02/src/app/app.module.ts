@@ -17,7 +17,9 @@ import { DetailsComponent } from './details/details.component';
     DetailsComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({
+      appId: 'ng-universal-ch02'
+    }),
     AppRoutingModule
   ],
   providers: [],
