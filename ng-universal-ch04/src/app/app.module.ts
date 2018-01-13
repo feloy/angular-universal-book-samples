@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserTransferStateModule } from '@angular/platform-browser';
 
 import { MyMaterialModule } from './my-material/my-material.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,12 +19,13 @@ import { CityWeatherResolverService } from './city-weather-resolver.service';
   ],
   imports: [
     BrowserModule.withServerTransition({
-      appId: 'ng-universal-ch01'
+      appId: 'ng-universal-ch04'
     }),
     HttpClientModule,
     AppRoutingModule,
     MyMaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BrowserTransferStateModule
   ],
   providers: [CityWeatherResolverService],
   bootstrap: [AppComponent]
