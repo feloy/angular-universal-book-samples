@@ -1,22 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
+import { MyMaterialModule } from './my-material/my-material.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { CityComponent } from './city/city.component';
+import { CityWeatherResolverService } from './city-weather-resolver.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CityComponent
   ],
   imports: [
     BrowserModule.withServerTransition({
       appId: 'ng-universal-ch01'
     }),
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    MyMaterialModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [CityWeatherResolverService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
